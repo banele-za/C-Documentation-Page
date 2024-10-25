@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>C# Technical Documentation</title>
+</head>
+<body>
+    <main id="main-doc">
+
+        <nav id="navbar">
+            <header>C# Technical Documentation</header>
+            <a class="nav-link" href="#Introduction">Introduction</a>
+            <a class="nav-link" href="#C#_Syntax_and_Basics">C# Syntax and Basics</a>
+            <a class="nav-link" href="#Control_Flow_Statements">Control Flow Statements</a>
+            <a class="nav-link" href="#Object-Oriented_Programming_in_C#">Object-Oriented Programming in C#</a>
+            <a class="nav-link" href="#Exception_Handling">Exception Handling</a>
+            <a class="nav-link" href="#C#_Collections_and_LINQ">C# Collections and LINQ</a>
+            <a class="nav-link" href="#File_I/O_in_C#">File I/O in C#</a>
+            <a class="nav-link" href="#Advanced_C#_Features">Advanced C# Features</a>
+        </nav>
+
+        <section class="main-section first-section" id="Introduction">
+            <header>Introduction</header>
+            <p>C# (pronounced "C-sharp") is a modern, object-oriented programming language developed by Microsoft. It was first released in 2000 as part of Microsoft’s .NET initiative and has since evolved into one of the most popular languages for developing Windows applications, web applications, games (using Unity), and enterprise software.</p>
+            <p>C# is known for its versatility, strong typing, and ease of use, making it a go-to language for both beginners and experienced developers. The language combines the power of C++ with the simplicity of Visual Basic, and it’s designed to work well with the .NET framework.</p>
+            <h2>Applications of C#:</h2>
+            <ul>
+                <li>Windows desktop applications</li>
+                <li>Web development (with ASP.NET)</li>
+                <li>Game development (especially with Unity)</li>
+                <li>Mobile app development (using Xamarin)</li>
+                <li>Cloud-based services (with Azure)</li>
+            </ul>
+        </section><br>
+
+        <section class="main-section" id="C#_Syntax_and_Basics">
+            <header>C# Syntax and Basics</header>
+            <p>Understanding C# starts with learning its basic syntax and how to declare variables, constants, and perform simple operations.</p>
+            <p><b>Data Types:</b> C# is a statically-typed language, meaning you need to declare the type of data a variable will hold. Common data types include:</p>
+            <ul>
+                <li><code class="inline-code">int</code> – for whole numbers (e.g., <code class="inline-code">int age = 25;</code>)</li>
+                <li><code class="inline-code">double</code> – for floating-point numbers (e.g., <code class="inline-code">double price = 9.99;</code>)</li>
+                <li><code class="inline-code">string</code> – for text (e.g., <code class="inline-code">string name = "Elden";</code>)</li>
+                <li><code class="inline-code">bool</code> – for true/false values (e.g., <code class="inline-code">bool isActive = true;</code>)</li>
+            </ul>
+            <p><b>Variables and Constants:</b> Variables are used to store data, and constants hold values that won’t change during the program's execution.</p>
+            <pre>
+                <code>
+                    int level = 5; // A variable
+                    const int maxHealth = 100; // A constant
+                </code>
+            </pre>
+        </section><br>
+
+        <section class="main-section" id="Control_Flow_Statements">
+            <header>Control Flow Statements</header>
+            <p>Control flow statements allow you to dictate the flow of your program by making decisions or repeating actions based on certain conditions.</p>
+            <p><code class="inline-code">if-else</code> <b>Statements:</b> The <code class="inline-code">if</code> statement checks a condition, and if it's true, it executes the associated code. An optional <code class="inline-code">else</code> block can run code when the condition is false.</p>
+            <pre><code>
+                if (health &lt; 50) {
+                    Console.WriteLine("Health is low!");
+                    } 
+                else {
+                    Console.WriteLine("You're safe.");
+                    }
+                </pre></code>
+            <code class="inline-code">switch</code> <b>Statements:</b> Use a <code class="inline-code">switch</code> statement when you have multiple conditions to check. It is cleaner and more readable than using many <code class="inline-code">if-else</code> statements.
+            <pre><code>
+                switch (weaponType) {
+                    case "sword":
+                        Console.WriteLine("You have a sword.");
+                        break;
+                    case "bow":
+                        Console.WriteLine("You have a bow.");
+                        break;
+                    default:
+                        Console.WriteLine("Unknown weapon.");
+                        break;
+                }
+            </pre></code>
+            <p><b>Loops:</b> Loops help you run a block of code multiple times.</p>
+            <ul>
+                <li><code class="inline-code">for loop</code>: Repeat a task a certain number of times.</li>
+                <li><code class="inline-code">while</code> loop: Repeat as long as a condition is true.</li>
+            </ul>
+            <pre><code>
+                for (int i = 0; i &lt; 10; i++) {
+                    Console.WriteLine(i);
+                }
+            </code></pre>
+        </section><br>
+
+        <section class="main-section" id="Object-Oriented_Programming_in_C#">
+            <header>Object-Oriented Programming in C#</header>
+            <p>C# is an object-oriented programming (OOP) language, meaning that everything in C# is based on the concept of objects and classes.</p>
+            <p><b>Classes and Objects:</b> A class is a blueprint for creating objects (instances). Objects represent real-world entities like characters in a game, cars, or even employees.</p>
+            <pre><code>
+                class Player {
+                    public string name;
+                    public int level;
+                
+                    public void Attack() {
+                        Console.WriteLine(name + " attacks!");
+                    }
+                }
+                
+                // Creating an object
+                Player radahn = new Player();
+                radahn.name = "Radahn";
+                radahn.level = 50;
+                radahn.Attack();
+                
+            </code></pre>
+            <p><b>Inheritance</b> allows a class to inherit fields and methods from another class, promoting code reuse.</p>
+            <pre><code>
+                class Warrior : Player {
+                    public void Defend() {
+                        Console.WriteLine(name + " defends!");
+                    }
+                }                
+            </code></pre>
+            <p><b>Polymorphism and Encapsulation:</b> Polymorphism allows objects to take multiple forms, while encapsulation hides details to prevent outside interference.</p>
+        </section><br>
+
+        <section class="main-section" id="Exception_Handling">
+            <header>Exception Handling</header>
+            <p>In C#, exceptions are used to handle errors gracefully. Instead of crashing the program, you can catch and manage these errors.</p>
+            <p><b>Try-catch Blocks:</b> The <code class="inline-code">try</code> block contains code that might throw an exception, and the <code class="inline-code">catch</code> block handles the error.</p>
+            <pre><code>
+                try {
+                    int result = 10 / 0;
+                } catch (DivideByZeroException ex) {
+                    Console.WriteLine("Cannot divide by zero!");
+                }
+                
+            </code></pre>
+            <p><b>Throwing Exceptions:</b> You can also throw exceptions manually when certain conditions occur.</p>
+            <pre><code>
+                if (health &lt; 0) {
+                    throw new InvalidOperationException("Health cannot be negative.");
+                }
+                
+            </code></pre>
+        </section><br>
+
+        <section class="main-section" id="C#_Collections_and_LINQ">
+            <header>C# Collections and LINQ</header>
+            <p>C# provides various collections to store and manage groups of related objects.</p>
+            <p><b>Arrays:</b> Arrays hold a fixed number of elements of the same type.</p>
+            <pre><code>
+                int[] scores = new int[5];
+
+            </code></pre>
+            <p><b>Lists:</b> Lists are more flexible than arrays and can dynamically resize.</p>
+            <pre><code>
+                List&lt;string&gt; inventory = new List&lt;string&gt;();
+                    inventory.Add("Sword");
+                    inventory.Add("Shield");
+                    
+            </code></pre>
+            <p><b>Dictionaries:</b> Dictionaries store key-value pairs, allowing you to map one value to another.</p>
+            <pre><code>
+                Dictionary&lt;string, int&gt; playerStats = new Dictionary&lt;string, int&gt;();
+                playerStats.Add("Strength", 10);
+                playerStats.Add("Dexterity", 8);
+
+            </code></pre>
+            <p><b>LINQ:</b> Language-Integrated Query (LINQ) allows you to query collections in a more readable way.</p>
+            <pre><code>
+                var highScores = scores.Where(score =&gt; score &gt; 50);
+
+            </code></pre>
+        </section><br>
+
+        <section class="main-section" id="File_I/O_in_C#">
+            <header>File I/O in C#</header>
+            <p>C# makes it easy to read from and write to files using the <code class="inline-code">System.IO</code> namespace.</p>
+            <p><b>Reading a file:</b></p>
+            <pre><code>
+                string text = File.ReadAllText("path_to_file.txt");
+                Console.WriteLine(text);
+
+            </code></pre>
+            <p><b>Writing to a File:</b></p>
+            <pre><code>
+                File.WriteAllText("path_to_file.txt", "Hello, Elden Ring!");
+
+            </code></pre>
+        </section><br>
+
+        <section class="main-section" id="Advanced_C#_Features">
+            <header>Advanced C# Features</header>
+            <p>C# includes advanced features like delegates, events, and asynchronous programming to enhance flexibility and performance.</p>
+            <p><b>Delegates:</b> A delegate is a type that represents references to methods.</p>
+            <pre><code>
+                public delegate void AttackDelegate();
+                public class Warrior {
+                    public void Attack() {
+                        Console.WriteLine("Warrior attacks!");
+                    }
+                }
+
+            </code></pre>
+            <p><b>Asynchronous Programming:</b> Asynchronous methods (<code class="inline-code">async</code> and <code class="inline-code">await</code>) improve performance by not blocking the main thread.</p>
+            <pre><code>
+                public async Task<int> FetchData() {
+                    await Task.Delay(2000);
+                    return 42;
+                }
+                
+            </code></pre>
+        </section><br>
+    </main>
+</body>
+</html>
